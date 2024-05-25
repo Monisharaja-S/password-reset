@@ -108,16 +108,19 @@ const forgetPassword = async(req,res)=>{
             const mailOptions = {
                 from: process.env.EMAIL_ID,
                 to : user.email,
-                subject:"Password-Reset-Link",
+                subject:"Password Reset Request",
                 html:`
                 <p> Dear ${user.userName} , </p>
                 
-                <p>Sorry to hear you’re having trouble logging into your account. We got a message that you forgot your password. If this was you, you can get right back into your account or reset your password now. </p>
-                <p> Click the following Link to reset your password \n ${resetLink} </p>
+                <p>We received a request to reset your password for your account associated with this email address.If you did not make this request, please ignore this email. Otherwise, you can reset your password using the link.</p>
+                <p> Reset Password link: \n ${resetLink} </p>
 
-                <p>If you didn’t request a login link or a password reset, you can ignore this message. </P>
+                <p>For your security, if you did not request a password reset, it is recommended to check your account activity and update your password to ensure your account remains secure.</P>
 
-                <p> Only people who know your account password or click the login link in this email can log into your account. </P>
+                <p>If you have any questions or need further assistance, feel free to contact our support team. </P>
+
+                <p> Best Regards, <p>
+                <p> Sales Team <p>
                 `
 
                 
